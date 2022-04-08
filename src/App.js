@@ -35,8 +35,17 @@ signOut(auth)
   }
   return (
     <div className="App">
-      <button onClick={handleGoogleAuthProvider} >google sing in</button>
-      <button onClick={handleSignOut}>sign out</button>
+
+
+
+      {
+
+        user.email?      <button onClick={handleSignOut}>sign out</button>:
+
+        <button onClick={handleGoogleAuthProvider} >google sing in</button>
+      }
+
+
       <h2>Your name:{user.displayName}</h2>
       <p>i know your email address: {user.email}</p>
       <img src={user.photoURL} alt="" />
